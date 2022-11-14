@@ -1,13 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function TodoItem(props) {
-  const { todo } = props;
-  return <li>{todo.title}</li>;
+class TodosList extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {};
+  }
+
+  render() {
+    const { todos } = this.props;
+    return (
+      <ul>
+        {todos.map((todo) => (
+          <li  key={todo.id}>{todo.title}</li>
+        ))}
+      </ul>
+    );
+  }
 }
 
-TodoItem.propTypes = {
-  todo: PropTypes.objectOf.isRequired,
+TodosList.propTypes = {
+  todos: PropTypes.arrayOf.isRequired,
 };
 
-export default TodoItem;
+export default TodosList;
