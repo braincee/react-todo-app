@@ -8,6 +8,10 @@
 - webpack
 - React
 
+## Website Mockup 📱 💻 🖥️
+
+![website_mockup](all-devices-black.png)
+
 ## Live Demo (not available)
 [Live Demo Link](#)
 
