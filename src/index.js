@@ -8,7 +8,7 @@ import TodoContainer from './functionBased/components/TodoContainer';
 import './functionBased/App.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render (
+root.render(
   <React.StrictMode>
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <TodoContainer />
