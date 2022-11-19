@@ -1,23 +1,25 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
+import {
+  Link, useNavigate, Route, Routes,
+} from 'react-router-dom';
+import SinglePage from './SinglePage';
 
 const About = () => {
-  const aboutData = {
-    title: 'About the App',
-    description:
-        'In this app, you can add, delete, submit and edit items. To edit items, simply double click on it. Once you are done, press the enter key to resubmit. This app will persist your data in the browser local storage. So whether you reload, close your app or reopened it, you still have access to your to-dos items.',
-  };
-
-  const { title, description } = aboutData;
-
+  const { url, path } = useNavigate();
   return (
-    <>
-      <Navbar />
-      <div style={{ width: '500px', margin: '0 auto', textAlign: 'center' }}>
-        <h1>{title}</h1>
-        <p>{description}</p>
-      </div>
-    </>
+    <div className="about__content">
+      <ul className="about__list">
+        <li>
+          <Link to={`${url}/about-app`}>About App</Link>
+        </li>
+        <li>
+          <Link to={`${url}/about-author`}>About Author</Link>
+        </li>
+      </ul>
+      <Routes>
+        <Route path={`${path}/:slug`} element={<SinglePage />} />
+      </Routes>
+    </div>
   );
 };
 export default About;
